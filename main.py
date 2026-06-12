@@ -18,6 +18,7 @@ MENU = (
     "7. Все траты по возрастанию суммы\n"
     "8. Самая дорогая и самая дешевая трата\n"
     "9. Траты по дням\n"
+    "10. Показать список команд\n"
     "0. Выход"
 )
 
@@ -148,9 +149,8 @@ def main():
     if answer == "да":
         load_demo(budget)
         print("Загружено трат", len(budget.expenses))
-
+    print(MENU)
     while True:
-        print(MENU)
         choice = input("Команда: ").strip()
         if choice == "0":
             print("Выход")
@@ -172,6 +172,8 @@ def main():
         elif choice == "8":
             do_min_max(budget)
         elif choice == "9":
+            do_by_day(budget)
+        elif choice == "10":
             do_by_day(budget)
         else:
             print("Нет такой команды")
