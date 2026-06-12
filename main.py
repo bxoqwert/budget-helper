@@ -141,7 +141,7 @@ def load_demo(budget):
         budget.add(day, amount, category)
 
 
-# Запускаем программу и крутим главный цикл меню
+# Запускаем программу и главный цикл меню
 def main():
     budget = Budget()
     answer = input("Загрузить примеры трат? (да/нет): ").strip().lower()
