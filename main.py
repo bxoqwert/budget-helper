@@ -23,7 +23,7 @@ MENU = (
 
 
 # Читаем целое число в нужных границах и повторяем запрос при ошибке
-def read_int(prompt, low, high):
+def read_number(prompt, low, high):
     while True:
         text = input(prompt).strip()
         if text.isdigit() and low <= int(text) <= high:
@@ -33,8 +33,8 @@ def read_int(prompt, low, high):
 
 # Спрашиваем данные новой траты и добавляем ее
 def do_add(budget):
-    day = read_int("День от 1 до " + str(DAYS) + ": ", 1, DAYS)
-    amount = read_int("Сумма: ", 1, 1000000000)
+    day = read_number("День от 1 до " + str(DAYS) + ": ", 1, DAYS)
+    amount = read_number("Сумма: ", 1, 1000000000)
     category = input("Категория: ").strip()
     if category == "":
         category = "без категории"
@@ -53,8 +53,8 @@ def do_undo(budget):
 
 # Считаем сумму трат за выбранный период
 def do_period(budget):
-    a = read_int("День A: ", 1, DAYS)
-    b = read_int("День B: ", 1, DAYS)
+    a = read_number("День A: ", 1, DAYS)
+    b = read_number("День B: ", 1, DAYS)
     if a > b:
         a, b = b, a   # Дни можно вводить в любом порядке
     print("С дня", a, "по день", b, "потрачено", budget.period_sum(a, b), "руб")
