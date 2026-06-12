@@ -174,7 +174,7 @@ def main():
         elif choice == "9":
             do_by_day(budget)
         elif choice == "10":
-            do_by_day(budget)
+            print(MENU)
         else:
             print("Нет такой команды")
 
