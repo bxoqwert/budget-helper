@@ -6,7 +6,7 @@
 
 from structures import Stack, BudgetTree
 
-DAYS = 31  # Сколько дней в месяце мы учитываем
+DAYS = 31
 
 
 # Одна трата с днем, суммой и категорией
